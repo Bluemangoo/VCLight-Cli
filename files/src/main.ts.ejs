@@ -1,0 +1,13 @@
+import VCLight from "vclight";
+<%if(template.router){-%>
+import router from "./app/router";
+<%}-%>
+import { VercelRequest, VercelResponse } from "@vercel/node";
+
+module.exports = async function(request:VercelRequest, response:VercelResponse) {
+    const app = new VCLight();
+<%if(template.router){-%>
+    app.use(router);
+<%}-%>
+    await app.fetch(request, response);
+};
