@@ -2,8 +2,7 @@
   "build": {
     "removeCR": [
       "lib",
-      "bin",
-      "files"
+      "bin"
     ]
   }
 }
